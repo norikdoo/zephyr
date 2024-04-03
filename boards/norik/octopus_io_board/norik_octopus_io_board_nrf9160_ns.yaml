@@ -14,4 +14,4 @@ supported:
   - spi
   - pwm
   - watchdog
-vendor: norik
+vendor: norik  

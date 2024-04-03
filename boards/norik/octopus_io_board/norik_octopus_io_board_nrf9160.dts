@@ -16,3 +16,4 @@
 		zephyr,sram-non-secure-partition = &sram0_ns;
 	};
 };
+ 
