@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Nordic Semiconductor ASA
+# Copyright (c) 2024 Norik systems d.o.o.
 # SPDX-License-Identifier: Apache-2.0
 
 board_runner_args(jlink "--device=nRF9160_xxAA" "--speed=4000")

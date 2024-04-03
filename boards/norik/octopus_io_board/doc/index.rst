@@ -46,7 +46,7 @@ Octopus IO Board offers the following features:
 * 64 Mbit SPI NOR flash
 * Dedicated ADC, GPIO, I2C, SPI and UARTE pins for expansion
 * Exposed headers for current measurements
-* Nano SIM card connector
+* Nano SIM connector
 * Tag-Connect TC2030-IDC 6-pin connector for SWD programming and debugging
 * 2x3 pinheader for SWD programming and debugging
 
@@ -55,13 +55,6 @@ Hardware
 
 Connections and IOs
 ===================
-
-.. figure:: img/Norik_Octopus_IO-Board_block_diagram.png
-      :align: center
-      :alt: Norik Octopus IO-Board top view
-      
-      Norik Octopus IO-Board
-
 
 The Octopus IO Board features multiple dedicated pin headers for peripherals:
 
@@ -104,8 +97,8 @@ Norik Octopus IO board can be programmed and debugged using the Tag-Connect TC20
 Building an application
 =======================
 
-In most case you'll need to use ``ns`` target for building examples. 
-Some examples don't require non secure mode and can be built without ``ns`` target.
+In most case you'll need to use ``norik_octopus_io_board_ns`` target for building examples. 
+Some examples don't require non secure mode and can be built without ``norik_octopus_io_board_ns`` target.
 
 Flashing
 ========

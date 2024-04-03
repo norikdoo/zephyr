@@ -1,4 +1,4 @@
-identifier: norik_octopus_io_boardnrf9160
+identifier: norik_octopus_io_board/nrf9160
 name: Norik Octopus IO-Board
 type: mcu
 arch: arm
