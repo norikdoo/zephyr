@@ -77,17 +77,6 @@ The Norik Octopus SoM supports the following hardware features:
 Connections and IOs
 ===================
 
-Pinout Diagram
---------------
-
-.. figure:: img/Norik_Octopus_Som_pinout.png
-     :align: center
-     :alt: Norik Octopus SoM pinout
-     
-     Norik Octopus SoM pinout
-
-
-
 Accelerometer
 -------------
 * MISO = P0.05
@@ -112,8 +101,8 @@ Norik Octopus SoM can be programmed and debugged using the exposed SWD pins.
 Building an application
 =======================
 
-In most case you'll need to use ``ns`` target for building examples. 
-Some examples don't require non secure mode and can be built without ``ns`` target.
+In most case you'll need to use ``norik_octopus_som_ns`` target for building examples. 
+Some examples don't require non secure mode and can be built without ``norik_octopus_som_ns`` target.
 
 Flashing
 ========
