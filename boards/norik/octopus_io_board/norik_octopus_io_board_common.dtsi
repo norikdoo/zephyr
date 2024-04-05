@@ -35,7 +35,7 @@
 		watchdog0 = &wdt0;
 		ldoctrl = &pwrgpio0;
 		chgctrl = &pwrgpio1;
-		w25q64 = &w25q64;
+		spi-flash0 = &w25q64;
 		bq25180 = &bq25180;
 	};
 };
@@ -54,7 +54,7 @@
 	pinctrl-0 = <&i2c0_default>;
 	pinctrl-1 = <&i2c0_sleep>;
 	pinctrl-names = "default", "sleep";
-	 
+
 	bq25180: bq25180@6a {
 		compatible = "i2c-device";
 		status = "okay";
@@ -63,9 +63,13 @@
 	};
 };
 
-&spi3 {	
+&spi3 {
+	status = "okay";
+	cs-gpios =	<&gpio0 5 GPIO_ACTIVE_LOW>;
+
 	w25q64: w25q64@0 {
 		compatible = "jedec,spi-nor";
+		status = "okay";
 		reg = <0>;
 		spi-max-frequency = <80000000>;
 		jedec-id = [ef 40 17];
@@ -75,55 +79,3 @@
 		t-exit-dpd = <3500>;
 	};
 };
-
-&flash0 {
-	partitions {
-		compatible = "fixed-partitions";
-		#address-cells = <1>;
-		#size-cells = <1>;
-
-		boot_partition: partition@0 {
-			label = "mcuboot";
-			reg = <0x00000000 0x10000>;
-		};
-		slot0_partition: partition@10000 {
-			label = "image-0";
-		};
-		slot0_ns_partition: partition@50000 {
-			label = "image-0-nonsecure";
-		};
-		slot1_partition: partition@80000 {
-			label = "image-1";
-		};
-		slot1_ns_partition: partition@c0000 {
-			label = "image-1-nonsecure";
-		};
-		storage_partition: partition@f8000 {
-			label = "storage";
-			reg = <0x000f8000 0x00008000>;
-		};
-	};
-};
-
-/ {
-	reserved-memory {
-		#address-cells = <1>;
-		#size-cells = <1>;
-		ranges;
-
-		sram0_s: image_s@20000000 {
-			/* Secure image memory */
-		};
-
-		sram0_modem: image_modem@20016000 {
-			/* Modem (shared) memory */
-		};
-
-		sram0_ns: image_ns@20020000 {
-			/* Non-Secure image memory */
-		};
-	};
-};
-
-/* Include partition configuration file */
-#include "norik_octopus_io_board_nrf9160_partition_conf.dtsi"
