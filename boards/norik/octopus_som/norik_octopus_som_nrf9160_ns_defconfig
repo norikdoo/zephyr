@@ -2,4 +2,3 @@
 
 # This Board implies building Non-Secure firmware
 CONFIG_TRUSTED_EXECUTION_NONSECURE=y
-
