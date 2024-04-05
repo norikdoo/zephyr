@@ -20,4 +20,3 @@
 &uart1 {
 	status = "disabled";
 };
- 
