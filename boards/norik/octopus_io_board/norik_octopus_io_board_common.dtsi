@@ -54,7 +54,7 @@
 	pinctrl-0 = <&i2c0_default>;
 	pinctrl-1 = <&i2c0_sleep>;
 	pinctrl-names = "default", "sleep";
-	 
+
 	bq25180: bq25180@6a {
 		compatible = "i2c-device";
 		status = "okay";

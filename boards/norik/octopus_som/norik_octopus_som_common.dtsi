@@ -10,14 +10,14 @@
 
 	leds {
 		compatible = "gpio-leds";
-		
+
 		led0: led_0 {
 			gpios = <&gpio0 7 0>;
 			label = "Green LED 1";
 		};
 
 	};
-	
+
 	pwmleds {
 		compatible = "pwm-leds";
 
@@ -28,7 +28,7 @@
 
 	simselect-controller {
 		compatible = "gpio-keys";
-		
+
 		sim_select: sim_select {
 			label = "SIM select";
 			gpios = <&gpio0 25 GPIO_ACTIVE_HIGH>;
@@ -64,7 +64,7 @@
 	pinctrl-0 = <&spi3_default>;
 	pinctrl-1 = <&spi3_sleep>;
 	pinctrl-names = "default", "sleep";
-	
+
 	adxl362: adxl362@0 {
 		compatible = "adi,adxl362";
 		spi-max-frequency = <8000000>;
