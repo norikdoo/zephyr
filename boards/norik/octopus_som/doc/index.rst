@@ -109,44 +109,17 @@ Flashing
 Refer to the instruction in the :ref:`nordic_segger` page to install and
 configure all the necessary software.
 
-Here is an example for the Hello World application.
-
-First, run your favorite terminal program to listen for output.
-
-.. code-block:: console
-
-   $ minicom /dev/<tty_device> 115200
-
-Replace <tty_device> with the port where the Octopus SoM can be found. For example, under Linux, /dev/ttyACM0.
-
-Then build and flash the application in the usual way.
-
-.. zephyr-app-commands::
-   :zephyr-app: samples/hello_world
-   :board: norik_octopus_som
-   :goals: build flash
-
-To build and flash the application in non-secure mode, use the following command:
-
-.. zephyr-app-commands::
-   :zephyr-app: samples/hello_world
-   :board: norik_octopus_som/nrf9160/ns
-   :goals: build flash
-
-
-Debugging
-=========
-Refer to the instruction in the :ref:`nordic_segger` page for information on
-debugging.
-
-Testing the on-board LED
-========================
-Use the :zephyr:code-sample:`blinky` sample to test the on-board LED. Build and flash the example to make sure Zephyr is running correctly on your board.
+Use the :zephyr:code-sample:`blinky` sample to test if Zephyr is running correctly on your board.
 
 .. zephyr-app-commands::
    :zephyr-app: samples/basic/blinky
    :board: norik_octopus_som
    :goals: build flash
+
+Debugging
+=========
+Refer to the instruction in the :ref:`nordic_segger` page for information on
+debugging.
 
 References
 **********

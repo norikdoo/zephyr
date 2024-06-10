@@ -41,6 +41,7 @@
 		pwm-led0 = &pwm_led0;
 		watchdog0 = &wdt0;
 		simselect = &sim_select;
+		accel0 = &adxl362;
 	};
 };
 
@@ -64,11 +65,11 @@
 	pinctrl-1 = <&spi3_sleep>;
 	pinctrl-names = "default", "sleep";
 	
-	mc3635: mc3635@0 {
-		compatible = "vnd,spi-device";
-		spi-max-frequency = <1000000>;
+	adxl362: adxl362@0 {
+		compatible = "adi,adxl362";
+		spi-max-frequency = <8000000>;
 		reg = <0>;
-		label = "mc3635";
+		int1-gpios = <&gpio0 12 0>;
 	};
 };
 

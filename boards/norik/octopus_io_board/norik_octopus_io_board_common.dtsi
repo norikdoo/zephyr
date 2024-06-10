@@ -35,7 +35,7 @@
 		watchdog0 = &wdt0;
 		ldoctrl = &pwrgpio0;
 		chgctrl = &pwrgpio1;
-		w25q64 = &w25q64;
+		spi-flash0 = &w25q64;
 		bq25180 = &bq25180;
 	};
 };
@@ -63,9 +63,13 @@
 	};
 };
 
-&spi3 {	
+&spi3 {
+	status = "okay";
+	cs-gpios =	<&gpio0 5 GPIO_ACTIVE_LOW>;
+
 	w25q64: w25q64@0 {
 		compatible = "jedec,spi-nor";
+		status = "okay";
 		reg = <0>;
 		spi-max-frequency = <80000000>;
 		jedec-id = [ef 40 17];
