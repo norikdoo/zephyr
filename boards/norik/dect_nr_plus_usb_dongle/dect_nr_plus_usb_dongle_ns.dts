@@ -1,0 +1,47 @@
+/dts-v1/;
+
+#include <nordic/nrf9151_ns_laca.dtsi>
+#include "dect_nr_plus_usb_dongle-pinctrl.dtsi"
+#include "dect_nr_plus_usb_dongle-partitioning.dtsi"
+
+/ {
+	model = "Norik DECT NR+ USB Dongle";
+	compatible = "norik,dect-nr-plus-usb-dongle";
+
+	chosen {
+		zephyr,flash = &flash0;
+		zephyr,sram = &sram0_ns_app;
+		zephyr,code-partition = &slot0_ns_partition;
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart0;
+	};
+
+	aliases {
+		led0 = &led0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led0: led_0 {
+			gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
+			label = "Green LED 1";
+		};
+	};
+};
+
+&gpiote {
+	status = "okay";
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&uart0 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-1 = <&uart0_sleep>;
+	pinctrl-names = "default", "sleep";
+};

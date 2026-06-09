@@ -1,0 +1,8 @@
+board:
+  name: dect_nr_plus_usb_dongle
+  full_name: dect_nr_plus_usb_dongle
+  vendor: norik
+  socs:
+  - name: nrf9151
+    variants:
+    - name: ns
